@@ -1,0 +1,23 @@
+{%extends 'main/partent.html'%}
+
+{%block content%}
+
+<div class="uk-container">
+
+<center>
+    <div class="uk-container-xsmall">
+        <form method="post">
+            {%csrf_token%}
+            {{form.as_p}}
+            <button type="submit" class="uk-button uk-button-primary">Update</button>
+        </form>
+
+
+    </div>
+</center>
+
+
+<br><br><br><br><br><br>
+
+</div>
+{%endblock content%}

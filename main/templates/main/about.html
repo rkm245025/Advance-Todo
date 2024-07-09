@@ -1,0 +1,93 @@
+{%extends 'main/partent.html'%}
+
+{%block content%}
+
+<div class="uk-container">
+    <h1 class="uk-heading-line"><span>About This Project</span></h1>
+
+    <section>
+        <h2>Project Overview</h2>
+        <p>The To-Do List Application is a simple yet powerful task management tool built using Django. It allows users to create, manage, and organize their tasks efficiently. This project demonstrates key features of a typical web application, including user authentication, CRUD operations, and advanced filtering.</p>
+    </section>
+
+    <section>
+        <h2>Key Features</h2>
+        <ul class="uk-list uk-list-bullet">
+            <li><strong>User Authentication:</strong>
+                <ul class="uk-list uk-list-disc">
+                    <li><strong>Registration:</strong> Users can sign up to create a new account.</li>
+                    <li><strong>Login/Logout:</strong> Registered users can log in and log out securely.</li>
+                    <li><strong>Profile Management:</strong> Each user has their own profile and to-do list.</li>
+                </ul>
+            </li>
+            <li><strong>To-Do List Management:</strong>
+                <ul class="uk-list uk-list-disc">
+                    <li><strong>Create Tasks:</strong> Users can add new tasks with a title, description, due date, priority level, and categories.</li>
+                    <li><strong>Update Tasks:</strong> Users can edit their tasks to update any details.</li>
+                    <li><strong>Delete Tasks:</strong> Users can remove tasks that are no longer needed.</li>
+                    <li><strong>Mark as Completed:</strong> Users can mark tasks as completed to keep track of their progress.</li>
+                </ul>
+            </li>
+            <li><strong>Categorization and Tagging:</strong>
+                <ul class="uk-list uk-list-disc">
+                    <li><strong>Categories:</strong> Users can categorize their tasks using tags for better organization.</li>
+                    <li><strong>Priority Levels:</strong> Tasks can be assigned priority levels (Low, Medium, High) to help users focus on important tasks.</li>
+                </ul>
+            </li>
+            <li><strong>Advanced Filtering:</strong>
+                <ul class="uk-list uk-list-disc">
+                    <li><strong>Filter by Category:</strong> Users can filter tasks based on categories to view specific groups of tasks.</li>
+                    <li><strong>Filter by Priority:</strong> Users can filter tasks based on priority levels to prioritize their workflow.</li>
+                    <li><strong>Filter by Completion Status:</strong> Users can filter tasks to view only completed or pending tasks.</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Technical Details</h2>
+        <ul class="uk-list uk-list-bullet">
+            <li><strong>Django Framework:</strong> The project is built using Django, a high-level Python web framework that encourages rapid development and clean, pragmatic design.</li>
+            <li><strong>Forms and Filters:</strong> The application uses Django forms to handle user input for creating and updating tasks. Custom filtering forms allow users to filter tasks based on different criteria.</li>
+            <li><strong>CSS Framework:</strong> The project leverages the UIkit CSS framework for a modern and responsive user interface.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Implementation</h2>
+        <p>The implementation of this project covers essential aspects of Django development, including:</p>
+        <ul class="uk-list uk-list-bullet">
+            <li><strong>Models:</strong> Define the data structure for tasks and categories using Django’s ORM.</li>
+            <li><strong>Views:</strong> Handle the logic for displaying, creating, updating, and deleting tasks.</li>
+            <li><strong>Templates:</strong> Use Django’s templating system to create dynamic HTML pages.</li>
+            <li><strong>Forms:</strong> Create forms for user input and filtering tasks.</li>
+            <li><strong>Filtering:</strong> Implement advanced filtering functionality to allow users to easily find and manage tasks.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Learning Outcomes</h2>
+        <p>This project is ideal for beginners and intermediate developers looking to enhance their Django skills. By working on this project, you will:</p>
+        <ul class="uk-list uk-list-bullet">
+            <li>Gain hands-on experience with Django’s authentication system.</li>
+            <li>Learn how to create and manage complex data models.</li>
+            <li>Understand how to implement CRUD operations.</li>
+            <li>Explore the use of forms and advanced filtering in Django.</li>
+            <li>Improve your front-end skills with CSS frameworks like UIkit.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Getting Started</h2>
+        <p>To get started with the To-Do List Application, follow these steps:</p>
+        <ol class="uk-list uk-list-decimal">
+            <li><strong>Clone the Repository:</strong> Clone the project repository to your local machine.</li>
+            <li><strong>Install Dependencies:</strong> Install the required Python packages using <code>pip</code>.</li>
+            <li><strong>Migrate Database:</strong> Run Django migrations to set up the database.</li>
+            <li><strong>Create Superuser:</strong> Create a superuser for admin access.</li>
+            <li><strong>Run the Server:</strong> Start the Django development server.</li>
+            <li><strong>Explore the Application:</strong> Open your web browser and explore the application features.</li>
+        </ol>
+    </section>
+</div>
+{%endblock content%}

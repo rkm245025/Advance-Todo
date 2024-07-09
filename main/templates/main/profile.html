@@ -1,0 +1,38 @@
+{%extends 'main/partent.html'%}
+
+
+{%block content%}
+<div class="uk-container">
+    <center>
+        <div class="uk-container-small">
+            <h1> profile !</h1>
+
+{%for p in data%}
+<div class="uk-card uk-card-secondary uk-width-1-2@m">
+    <div class="uk-card-header">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-auto">
+                <img class="uk-border-circle" width="40" height="40" src="images/avatar.jpg" alt="Avatar">
+            </div>
+            <div class="uk-width-expand">
+                <h3 class="uk-card-title uk-margin-remove-bottom">{{p.username}}</h3>
+                <p class="uk-text-meta uk-margin-remove-top"><b>{{p.first_name}} {{p.last_name}}</b></p>
+                <p class="uk-text-meta uk-margin-remove-top"><b>{{p.email}}</b></p>
+            </div>
+        </div>
+    </div>
+    <div class="uk-card-body">
+        <p>This is your profile Thanks</p>
+      
+    </div>
+   
+</div>
+{%endfor%}
+        </div>
+
+    </center>
+
+</div>
+
+
+{%endblock content%}

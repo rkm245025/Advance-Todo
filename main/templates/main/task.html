@@ -1,0 +1,27 @@
+{%extends 'main/partent.html'%}
+
+{%block content%}
+
+
+
+<div class="uk-container">
+
+    <center>
+        <div class="uk-container-xsmall">
+            <h3>Add your task here!</h3>
+            <form action="{%url 'task'%}"  method="post">
+                {%csrf_token%}
+                {{form.as_p}}
+
+
+                <br><br>
+                <button class="uk-button uk-button-danger" type="submit">Add</button>
+
+            </form>
+<br><br><br><br><br><br><br>
+
+
+        </div>
+    </center>
+</div>
+{%endblock content%}

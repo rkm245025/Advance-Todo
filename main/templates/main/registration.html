@@ -1,0 +1,33 @@
+{%extends 'main/partent.html'%}
+
+
+
+{%block content%}
+
+
+<div class="uk-container">
+<div class="uk-container-large">
+    <br><br>
+    <center><h3>Registration</h3></center>
+    
+    <form action="{%url 'registration'%}" method="POST">
+        {%csrf_token%}
+        {{form.as_p}}
+
+        <br><br>
+        <button class="uk-button uk-button-secondary" type="submit">Registor</button>
+        <br><br><br><br><br><br><br><br>
+
+
+
+    </form>
+
+
+</div>
+
+
+
+
+</div>
+
+{%endblock content%}

@@ -1,0 +1,50 @@
+{%extends 'main/partent.html'%}
+
+{%block content%}
+<div class="uk-container">
+
+    <center><div class="uk-container-xsmall">
+        <br><br>
+        <br><br><br><br><br>
+        <h3>Filter</h3>
+        
+        {%if user.is_authenticated%}
+        <form action="{%url 'filter'%}" method="post" class="uk-form-stacked">
+            <div>
+            {%csrf_token%}
+            {{form.as_p}}
+            <button class="uk-button uk-button-danger"> Filter</button>
+            </div>
+        </form>
+        {%endif%}
+    </div>
+    <br><br><br><br>
+    
+    {%if tasks%}
+    <br><br>
+    <h3>Filtered Task</h3>
+    {%for task in tasks%}
+<div class="uk-card uk-card-secondary uk-card-body">
+    <h3 class="uk-card-title">{{task.title}}</h3>
+    
+    <p>Description:-{{task.description}}</p>
+    <p>Due Date :- {{task.due_date}}</p>
+    <p>Task Priority :- {{task.priority}}</p>
+    <p>Completed :- {{task.completed}}</p>
+    <p>Task category :-{{task.categories}}</p>
+    <br><br>
+    <button class="uk-button uk-button-secondary"><a class="uk-button-secondary" href="{%url 'update' task.pk%}">Update</a></button>
+    <button class="uk-button uk-button-danger" ><a href="{%url 'delete' task.pk%}">Delete</a></button>
+    
+</div>
+<br><br>
+{%endfor%}
+</div>
+    {%endif%}
+
+    </center>
+</div>
+
+
+
+{%endblock content%}

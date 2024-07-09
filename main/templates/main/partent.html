@@ -1,0 +1,79 @@
+
+{%load static%}
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Django Project{% endblock %}</title>
+    <!-- UIkit CSS locally hosted -->
+    <link rel="stylesheet" href="{% static 'uikit/css/uikit.min.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    
+    <nav class="uk-navbar-container uk-background-blend-color-dodge">
+        <div class="uk-container">
+            <div uk-navbar>
+    
+                <div class="uk-navbar-left">
+                    <a class="uk-navbar-toggle uk-navbar-toggle-animate" uk-navbar-toggle-icon href="#"></a>
+                   
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li class="uk-active"><a href="{%url 'home'%}">Home</a></li>
+                            <li><a href="{%url 'about'%}">About</a></li>
+                            {%if user.is_authenticated%}
+                            <li><a href="{%url 'logout_user'%}">Logout</a></li>
+                            <li><a href="{%url 'task'%}">Add Task</a></li>
+                            <li><a href="{%url 'profile'%}">View Profile</a></li>
+                            <li><a href="{%url 'filter'%}">filter Task</a></li>
+
+                            {%else%}
+                            <li><a href="{%url 'login_user'%}">Login</a></li>
+
+                            <li><a href="{%url 'registration'%}">Registration</a></li>
+                            {%endif%}
+                        </ul>
+                    </div>
+                    {%if user.is_authenticated%}
+                    <form action="{%url 'search'%}" method="post">
+                        {%csrf_token%}
+                        <div style="display: flex; align-items: end; justify-content: space-between;"><input placeholder="Enter your task name to serch task" class="uk-input" type="text" name="item">
+                        <button type="submit" class="uk-button-small uk-button-danger ">search</button></div>
+                    </form>
+                    {%endif%}
+                 
+                 
+                </div>
+    
+            </div>
+        </div>
+    </nav>
+    {%if messages%}
+    {%for messege in messages%}
+    <div uk-alert>
+        <a href class="uk-alert-close" uk-close></a>
+        <h3>Alert!</h3>
+        <p>{{messege}}</p>
+    </div>
+    {%endfor%}
+    {%endif%}
+
+
+
+    <!-- your_template.html -->
+
+    {% block content %}{% endblock %}
+
+
+
+
+    <!-- UIkit JS locally hosted -->
+    <script src="{% static 'uikit/js/uikit.min.js' %}"></script>
+    <script src="{% static 'uikit/js/uikit-icons.min.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+    
+</body>
+</html>

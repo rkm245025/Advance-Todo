@@ -1,0 +1,56 @@
+{%extends 'main/partent.html'%}
+
+
+
+{%block content%}
+
+
+    <div class="uk-container ">
+        <center>
+        <div class="uk-container-expand">
+<h1>Home Page</h1>
+{% if data %}
+{%for i in data%}
+{{i.username}}
+<h3>Hello,{{i.first_name}}</h3>
+
+{%endfor%}
+<center>
+<h3>Your Task</h3>
+<div class="uk-grid-column-small" >
+{%for task in tasks%}
+<div class="uk-card uk-card-secondary uk-card-body">
+    <h3 class="uk-card-title">{{task.title}}</h3>
+    
+    <p>Description:-{{task.description}}</p>
+    <p>Due Date :- {{task.due_date}}</p>
+    <p>Task Priority :- {{task.priority}}</p>
+    <p>Completed :- {{task.completed}}</p>
+    <p>Task category :-{{task.categories}}</p>
+    <br><br>
+    <button class="uk-button uk-button-secondary"><a class="uk-button-secondary" href="{%url 'update' task.pk%}">Update</a></button>
+    <button class="uk-button uk-button-danger" ><a href="{%url 'delete' task.pk%}">Delete</a></button>
+    
+</div>
+<br><br>
+{%endfor%}
+</div>
+    </div>
+    <br><br><br>
+
+</center> 
+    </div>
+</center>  
+</div>
+
+
+
+   
+{%else%}
+<p>Your data is not avialble plese login </p>
+{%endif%}
+    </div>
+    
+    
+
+{%endblock content%}

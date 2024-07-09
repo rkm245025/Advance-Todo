@@ -1,0 +1,29 @@
+{%extends 'main/partent.html'%}
+
+{%block content%}
+<div class="uk-container">
+
+    <center><div class="uk-container-xsmall">
+        <br><br>
+        <br><br><br><br><br>
+        <h3>Login</h3>
+        
+
+        <form action="{%url 'login_user'%}" method="post">
+            {%csrf_token%}
+
+            <input class="uk-input" type="text" placeholder="Username" name="username">
+            <input class="uk-input" type="password" placeholder="password" name="password">
+            <br><br><br>
+
+            <button class="uk-button uk-button-default-">Login</button>
+        </form>
+
+    </div>
+
+    </center>
+</div>
+
+
+
+{%endblock content%}

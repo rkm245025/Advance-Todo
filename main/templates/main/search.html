@@ -1,0 +1,48 @@
+{%extends 'main/partent.html'%}
+
+{%block content%}
+
+
+
+<div class="uk-container">
+
+    <center>
+        <div class="uk-container-xsmall">
+            <h3>result</h3>
+
+            {%for p in items%}
+<div class="uk-card uk-card-secondary uk-width-1-2@m">
+    <div class="uk-card-header">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+           
+            <div class="uk-width-expand">
+                <h3 class="uk-card-title uk-margin-remove-bottom">{{p.title}}</h3>
+                <p class="uk-text-meta uk-margin-remove-top"><b>{{p.description}} </b></p>
+                <p class="uk-text-meta uk-margin-remove-top"><b>Due date :-{{p.due_date}} </b></p>
+                <p class="uk-text-meta uk-margin-remove-top"><b>Priority:-{{p.priority}}</b></p>
+                <p class="uk-text-meta uk-margin-remove-top"><b>Completed :-{{p.completed}}</b></p>
+
+            </div>
+            
+        </div>
+    </div>
+    
+    </div>
+    <br><br><br><br>
+    {%endfor%}
+   
+</div>
+
+
+           
+
+
+
+        </div>
+        
+    </center>
+    <br><br><br><br>
+    <center><button class="uk-button uk-button-danger"> <a href="{%url 'home'%}">Home</a></button>
+
+</div>
+{%endblock content%}
